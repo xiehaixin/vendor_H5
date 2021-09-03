@@ -1,0 +1,141 @@
+@import "./const.scss";
+
+body,
+html {
+  line-height: 1;
+  font-family: 'STHeiti', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  // background: $color-background;
+  color: $color-text;
+
+
+}
+
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+ 
+  /*px*/
+  padding-left: env(safe-area-inset-left);
+  background-color: $color-background-d;
+
+}
+
+
+.theme_a {
+  background-color: $style-a !important;
+}
+
+.theme_b {
+  background-color: $style-b !important;
+}
+
+.theme_c {
+  background-color: $style-c !important;
+}
+
+.theme_d {
+  background-color: $style-d !important;
+}
+
+.theme_e {
+  background-color: $style-e !important;
+}
+
+.icon_a {
+  color: $style-a !important;
+}
+
+.icon_b {
+  color: $style-b !important;
+}
+
+.icon_c {
+  color: $style-c !important;
+}
+
+.icon_d {
+  color: $style-d !important;
+}
+
+.icon_e {
+  color: $style-e !important;
+}
+
+
+
+.theme-img_a {
+  background:linear-gradient(118deg,rgba(253,200,73,1) 0%,rgba(249,214,0,1) 100%);
+}
+
+.theme-img_b {
+  background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%);
+}
+
+.theme-img_c {
+  background-image: linear-gradient(-127deg, #F5515F 0%, #9F041B 100%);
+}
+
+.theme-img_d {
+  background-image: linear-gradient(-126deg, #1E72D5 0%, #53A0FD 47%, #8CC1FF 100%);
+}
+
+.theme-img_e {
+  background-image: linear-gradient(-129deg, #B4EC51 0%, #429321 100%);
+}
+
+
+
+/*scroll 组件*/
+.scroll-list {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+
+  >div {
+    &::after{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100px;
+    }
+    padding-bottom: calc(env(safe-area-inset-bottom));
+
+  }
+}
+
+.mint-tab-item {
+  padding: 0 !important;
+  height: 100px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-content: center;
+
+
+  .mint-tab-item-icon {
+    margin: 0 auto !important;
+    width: 100%;
+    vertical-align: middle;
+    padding-bottom: 5px;
+    height: initial;
+
+    img {
+      width: 40px;
+      margin: auto;
+      height: initial;
+
+    }
+  }
+}
+
+
+button{
+  outline: none;
+  border:0;
+  font-size:28px;/*px*/
+}

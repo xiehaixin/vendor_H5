@@ -1,0 +1,204 @@
+ @import '~@/common/scss/const.scss';
+
+ // 2x 3x 背景图片
+ @mixin bg-image($name) {
+   background-image: url($name + '@2x.png');
+
+   @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+     background-image: url($name + "@3x.png");
+   }
+ }
+
+ //字体不转换rem
+ @mixin font-size($size) {
+   font-size: $size+px;
+   /*px*/
+ }
+
+ @mixin color666() {
+   color: $color-dialog-background;
+
+ }
+
+ @mixin color999() {
+   color: $color-dialog-background2;
+
+ }
+
+ @mixin color111() {
+   color: $color-1;
+
+ }
+
+ @mixin fjc($m1:center, $m2:center) {
+   display: flex;
+   align-items: $m1;
+   justify-content: $m2;
+ }
+
+ @mixin fac($m1:center) {
+  display: flex;
+  align-items: $m1;
+}
+
+ @mixin black-wrap-fixed($v:.8, $m2:center) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,$v);
+ }
+
+ // 单行文本超出显示省略号
+ @mixin no-wrap() {
+   -ms-text-overflow: ellipsis;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+ }
+
+ @mixin textLeng($row:1) {
+   line-height: 1.2;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+ // 多行文本超出显示省略号
+ @mixin no-wrap-multi($n) {
+   display: -webkit-box !important;
+   -ms-text-overflow: ellipsis;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   word-break: break-all;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: $n; // 可显示行数
+ }
+
+ // 扩展点击区域
+ @mixin extend-click() {
+   position: relative;
+
+   &:before {
+     content: '';
+     position: absolute;
+     top: -10px;
+     left: -10px;
+     right: -10px;
+     bottom: -10px;
+   }
+ }
+
+ @mixin border-top ($color:$color-border) {
+   position: relative;
+
+
+   &::before {
+     content: " ";
+     position: absolute;
+     left: 0;
+     top: 0;
+     right: 0;
+     height: 1px;
+     border-top: 1px solid #e5e5e5;
+     color: $color;
+     -webkit-transform-origin: 0 0;
+     transform-origin: 0 0;
+     -webkit-transform: scaleY(0.5);
+     transform: scaleY(0.5);
+
+   }
+
+   @media all and (-webkit-min-device-pixel-ratio: 3) {
+     &::before {
+       content: " ";
+       position: absolute;
+       left: 0;
+       top: 0;
+       right: 0;
+       height: 1px;
+       border-top: 2px solid #e5e5e5;
+       color: $color;
+
+
+     }
+
+   }
+ }
+
+
+ @mixin border-bottom ($color:$color-border) {
+   position: relative;
+
+
+   &::before {
+     content: " ";
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     height: 1px;
+     border-bottom: 1px solid #e5e5e5;
+     color: $color;
+     -webkit-transform-origin: 0 0;
+     transform-origin: 0 0;
+     -webkit-transform: scaleY(0.5);
+     transform: scaleY(0.5);
+
+   }
+
+   @media all and (-webkit-min-device-pixel-ratio: 3) {
+     &::before {
+       content: " ";
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       right: 0;
+       height: 1px;
+       border-bottom: 2px solid #e5e5e5;
+       color: $color;
+
+
+     }
+
+   }
+ }
+
+ //  @mixin border-right ($color:$color-border) {
+ //   position: relative;
+
+
+ //   &::after{
+ //     content: " ";
+ //     position: absolute;
+
+ //     top: 0;
+ //     right: 0;
+ //     height: 1px;
+ //     border-right: 30px solid red;
+ //     color: $color;
+ //     -webkit-transform-origin: 0 0;
+ //     transform-origin: 0 0;
+ //     -webkit-transform: scaleY(0.5);
+ //     transform: scaleY(0.5);
+
+ //   }
+
+ //   @media all and (-webkit-min-device-pixel-ratio: 3) {
+ //     &::before {
+ //       content: " ";
+ //       position: absolute;
+
+ //       top: 0;
+ //       right: 0;
+ //       height: 1px;
+ //       border-right: 2px solid #e5e5e5;
+ //       color: $color;
+
+ //       left: 0;
+ //     }
+
+ //   }
+ // }
